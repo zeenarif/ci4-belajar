@@ -1,0 +1,9 @@
+# Paksa line ending LF agar aman walau repo di-clone di Windows
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary

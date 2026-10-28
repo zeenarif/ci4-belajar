@@ -1,0 +1,32 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8000:80"
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - db
+
+  db:
+    image: mariadb:11
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: ci4_belajar
+      MARIADB_USER: ci4
+      MARIADB_PASSWORD: secret
+    # Tidak perlu expose port database ke host, karena kita akan mengaksesnya melalui jaringan internal Docker Compose. Jika ingin mengakses database dari host, uncomment baris berikut:
+    # ports:
+    #   - "3306:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+
+volumes:
+  dbdata:

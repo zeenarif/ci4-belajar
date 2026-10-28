@@ -1,0 +1,3 @@
+# Kode aplikasi di-mount lewat volume, tidak perlu masuk ke build context
+src/
+.git/

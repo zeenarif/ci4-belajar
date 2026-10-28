@@ -1,0 +1,11 @@
+# Aturan khusus aplikasi CI4 ada di src/.gitignore
+# (.env, vendor/, writable/*, dll.)
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# File override Docker Compose lokal (misal ganti port di mesin sendiri)
+docker-compose.override.yml
